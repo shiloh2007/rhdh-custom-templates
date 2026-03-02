@@ -7,9 +7,9 @@ metadata:
   tags:
     - python
     - ai
-    - CUDA
-    - PyTorch
-    - Vision
+    - cuda
+    - pytorch
+    - vision
 spec:
   owner: user:guest
   type: service
@@ -31,16 +31,13 @@ spec:
           title: Image number
           type: integer
           description: The number of images that are given to the model.
-          ui:autofocus: true
         pip_or_conda:
           title: pip or conda
-          type: choice
-          options: 
-          - pip
-          - conda
-          description: The number of images that are given to the model.
-          ui:autofocus: true
-        
+          type: string
+          enum: 
+            - pip
+            - conda
+          description: Choose your preferred package manager.
 
   # 2. STEPS: The actions the hub performs after the form is submitted.
   steps:
