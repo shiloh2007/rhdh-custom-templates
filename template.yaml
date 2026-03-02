@@ -45,4 +45,4 @@ spec:
       name: Log Model Creation
       action: debug:log
       input:
-        message: "Starting setup for the ${{ parameters.project_name }} deep learning model!"
+        message: "Starting setup for the ${{ parameters.project_name }} Project, with ${{ parameters.img_num }} images, using ${{ paramteres.pip_or_conda }}!"
