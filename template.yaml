@@ -1,27 +1,46 @@
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
-  name: deep-learning-starter
-  title: Deep Learning Model Starter
-  description: A basic template to initialize a new neural network workspace.
+  name: pytorch-vision-starter
+  title: PyTorch Vision Starter
+  description: A template that scaffolds a complete Python workspace for image classification using ResNet-18 and CUDA.
   tags:
     - python
     - ai
+    - CUDA
+    - PyTorch
+    - Vision
 spec:
   owner: user:guest
   type: service
 
   # 1. PARAMETERS: This builds the UI form the user will see.
   parameters:
-    - title: Model Information
+    - title: Project Information
       required:
-        - model_name
+        - project_name
+        - img_num
+        - pip_or_conda
       properties:
-        model_name:
-          title: Model Name
+        project_name:
+          title: Project Name
           type: string
-          description: The name of your new deep learning model.
+          description: The name of your project.
           ui:autofocus: true
+        img_num:
+          title: Image number
+          type: integer
+          description: The number of images that are given to the model.
+          ui:autofocus: true
+        pip_or_conda:
+          title: pip or conda
+          type: choice
+          options: 
+          - pip
+          - conda
+          description: The number of images that are given to the model.
+          ui:autofocus: true
+        
 
   # 2. STEPS: The actions the hub performs after the form is submitted.
   steps:
@@ -29,4 +48,4 @@ spec:
       name: Log Model Creation
       action: debug:log
       input:
-        message: "Starting setup for the ${{ parameters.model_name }} deep learning model!"
+        message: "Starting setup for the ${{ parameters.project_name }} deep learning model!"
