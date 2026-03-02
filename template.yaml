@@ -3,7 +3,7 @@ kind: Template
 metadata:
   name: pytorch-vision-starter
   title: PyTorch Vision Starter
-  description: A template that scaffolds a complete Python workspace for image classification using ResNet-18 and CUDA.
+  description: A very cool template that creates a complete Python workspace for image classification using ResNet-18 and CUDA.
   tags:
     - python
     - ai
