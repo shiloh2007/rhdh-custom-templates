@@ -47,7 +47,7 @@ spec:
       action: publish:bitbucketCloud
       input:
         # Added the required project key to the URL string
-        repoUrl: 'bitbucket.org?workspace=learning_devops_co&project=DEV&repo=${{ parameters.project_name }}'
+        repoUrl: 'bitbucket.org?workspace=learning_devops_co&project=PYT&repo=${{ parameters.project_name }}'
         description: "Generated PyTorch Vision Model"
 
     - id: register
