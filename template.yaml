@@ -37,7 +37,7 @@ spec:
       name: Generate the code
       action: fetch:template
       input:
-        url: https://bitbucket.org/learning_devops_co/pytorch-vision-skeleton
+        url: https://bitbucket.org/learning_devops_co/pytorch-vision-skeleton/get/main.zip
         values:
           project_name: ${{ parameters.project_name }}
           img_num: ${{ parameters.img_num }}
