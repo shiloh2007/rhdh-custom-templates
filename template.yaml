@@ -48,4 +48,11 @@ spec:
       input:
         repoUrl: bitbucket.org?workspace=learning_devops_co-admin&repo=${{ parameters.project_name }}
         description: "Generated PyTorch Vision Model"
+
+    - id: register
+      name: register in developer hub
+      action: catalog:register
+      input:
+        repoContentsUrl: ${{ steps.publish.output.repoContentsUrl }}
+        catalogInfoPath: '/catalog-info.yaml'
     
