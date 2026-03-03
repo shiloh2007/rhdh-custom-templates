@@ -14,7 +14,6 @@ spec:
   owner: user:guest
   type: service
 
-  # 1. PARAMETERS: This builds the UI form the user will see.
   parameters:
     - title: Project Information
       required:
@@ -31,7 +30,6 @@ spec:
           type: integer
           description: The number of images that are given to the model.
 
-  # 2. STEPS: The actions the hub performs after the form is submitted.
   steps:
     - id: fetch-skeleton
       name: Generate the code
@@ -46,7 +44,6 @@ spec:
       name: publish the new repository
       action: publish:bitbucketCloud
       input:
-        # Added the required project key to the URL string
         repoUrl: 'bitbucket.org?workspace=learning_devops_co&project=PYT&repo=${{ parameters.project_name }}'
         description: "Generated PyTorch Vision Model"
 
