@@ -37,4 +37,15 @@ spec:
       name: Generate the code
       action: fetch:template
       input:
-        url: 
+        url: https://bitbucket.org/learning_devops_co/pytorch-vision-skeleton/src/main/
+        values:
+          project_name: ${{ parameters.project_name }}
+          img_num: ${{ parameters.img_num }}
+
+    - id: publish
+      name: publish the new repository
+      action: publish:bitbucket
+      input:
+        repoUrl: bitbucket.org?workspace=learning_devops_co-admin&repo=${{ parameters.project_name }}
+        description: "Generated PyTorch Vision Model"
+    
