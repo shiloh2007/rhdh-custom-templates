@@ -44,7 +44,7 @@ spec:
 
     - id: publish
       name: publish the new repository
-      action: publish:bitbucket
+      action: publish:bitbucketCloud
       input:
         repoUrl: bitbucket.org?workspace=learning_devops_co&repo=${{ parameters.project_name }}
         description: "Generated PyTorch Vision Model"
