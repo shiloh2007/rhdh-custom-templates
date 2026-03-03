@@ -24,7 +24,7 @@ spec:
         project_name:
           title: Project Name
           type: string
-          description: The name of your project.
+          description: The name of your project (use hyphens instead of spaces, e.g., best-ever).
           ui:autofocus: true
         img_num:
           title: Image number
@@ -46,7 +46,8 @@ spec:
       name: publish the new repository
       action: publish:bitbucketCloud
       input:
-        repoUrl: bitbucket.org?workspace=learning_devops_co&repo=${{ parameters.project_name }}
+        # Added the required project key to the URL string
+        repoUrl: 'bitbucket.org?workspace=learning_devops_co&project=YOUR_PROJECT_KEY&repo=${{ parameters.project_name }}'
         description: "Generated PyTorch Vision Model"
 
     - id: register
