@@ -38,6 +38,7 @@ spec:
       action: fetch:template
       input:
         url: https://bitbucket.org/learning_devops_co/pytorch-vision-skeleton/src/main/
+        secret: ${{ secrets.USER_OAUTH_TOKEN }}
         values:
           project_name: ${{ parameters.project_name }}
           img_num: ${{ parameters.img_num }}
